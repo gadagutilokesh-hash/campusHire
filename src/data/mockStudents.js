@@ -1,0 +1,46 @@
+// Realistic mock student profile data
+export const currentStudent = {
+  id: 'stu_2023_cs_042',
+  name: 'Arjun Sharma',
+  rollNo: '23BCSE042',
+  email: 'arjun.sharma@nite.edu.in',
+  phone: '+91 98765 43210',
+  branch: 'Computer Science & Engineering',
+  batch: '2023 - 2027',
+  currentSemester: 7,
+  cgpa: 8.78,
+  activeBacklogs: 0,
+  historyBacklogs: 0,
+  tenthPercentage: 94.6,
+  twelfthPercentage: 92.4,
+  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250',
+  gender: 'Male',
+  category: 'General',
+  skills: ['Data Structures & Algorithms', 'React.js', 'Node.js', 'Python', 'PostgreSQL', 'System Design'],
+  resumeUrl: '/documents/Arjun_Sharma_Resume.pdf',
+  resumeUpdated: '2026-10-15',
+  githubUrl: 'https://github.com/arjunsharma-dev',
+  linkedinUrl: 'https://linkedin.com/in/arjun-sharma-nite',
+  placementStatus: 'In Process', // 'Unplaced', 'In Process', 'Placed'
+  offersCount: 0,
+  profileCompletion: 85,
+  completionChecklist: [
+    { id: 1, title: 'Personal Details & Contact Info', completed: true },
+    { id: 2, title: 'Academic Records (10th, 12th, Sem 1-6)', completed: true },
+    { id: 3, title: 'Resume Uploaded (PDF format)', completed: true },
+    { id: 4, title: 'Skill Badges & Certifications', completed: true },
+    { id: 5, title: 'Internship & Project Portfolios', completed: true },
+    { id: 6, title: 'Placement Policy Acknowledgment Form', completed: false, tip: 'Sign and submit the 2026 placement guidelines agreement.' },
+  ],
+};
+
+export const currentOfficer = {
+  id: 'off_2026_head_01',
+  name: 'Dr. Radhika Menon',
+  designation: 'Head of Placement & Training (TPO)',
+  department: 'Office of Career Services & Corporate Relations',
+  email: 'tpo@nite.edu.in',
+  phone: '+91 (080) 2854-9900',
+  avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=250',
+  officeRoom: 'Administration Block, Room 204',
+};

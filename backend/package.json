@@ -1,0 +1,22 @@
+{
+  "name": "campushire-backend",
+  "version": "1.0.0",
+  "description": "CampusHire backend REST API with Express and MongoDB Atlas Mongoose integration",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node test/backend.test.js && node test/milestone3.test.js && node test/profile.test.js && node test/officerAuth.test.js",
+    "provision:officer": "node scripts/provision-officer.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.0.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0"
+  }
+}

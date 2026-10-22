@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" rx="6" fill="#0A0A0A" />
+  <!-- Academic / Corporate Heraldic Mark -->
+  <path d="M16 6 L26 11 L16 16 L6 11 Z" fill="#007BA7" />
+  <path d="M10 13.5 V19.5 C10 22 12.5 24 16 24 C19.5 24 22 22 22 19.5 V13.5 L16 16.5 Z" fill="#007BA7" opacity="0.9" />
+  <!-- Neon Rose Tassel / Live Verification Node -->
+  <line x1="24" y1="12" x2="24" y2="19" stroke="#FF2E88" stroke-width="2" stroke-linecap="round" />
+  <circle cx="24" cy="20" r="1.5" fill="#FF2E88" />
+</svg>
