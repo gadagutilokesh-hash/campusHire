@@ -3,10 +3,11 @@
 export const APP_CONFIG = {
   NAME: 'CampusHire',
   TAGLINE: 'Modern Campus Recruitment & Placement Portal',
-  COLLEGE_NAME: 'National Institute of Technology & Engineering',
+  COLLEGE_NAME: 'Sree Dattha Institute of Engineering and Science',
+  COLLEGE_SHORT: 'SDES',
   PLACEMENT_SESSION: '2026-2027',
   VERSION: '1.0.0-milestone1',
-  CONTACT_EMAIL: 'placements@nite.edu.in',
+  CONTACT_EMAIL: 'placements@sdes.edu.in',
   HELP_DESK: '+91 (080) 2854-9922',
 };
 

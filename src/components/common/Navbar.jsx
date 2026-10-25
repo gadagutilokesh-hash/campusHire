@@ -66,12 +66,12 @@ export const Navbar = () => {
                 <span className="text-lg font-extrabold tracking-tight text-[#0A0A0A]">
                   Campus<span className="text-[#007BA7]">Hire</span>
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F3F5F7] text-[#667085] px-1.5 py-0.5 rounded border border-slate-200">
-                  PORTAL
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F3F5F7] text-[#007BA7] px-1.5 py-0.5 rounded border border-slate-200">
+                  SDES
                 </span>
               </div>
               <p className="text-[10px] text-[#667085] font-medium hidden sm:block">
-                Placement Management System
+                SDES Placement Portal
               </p>
             </div>
           </Link>

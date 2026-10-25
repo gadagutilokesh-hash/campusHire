@@ -54,7 +54,7 @@ export const mockDrives = [
     selectedCount: null,
     venue: 'Auditorium Hall B',
     coordinator: 'Prof. K. Venkatesh',
-    contact: 'cisco.drive@nite.edu.in',
+    contact: 'cisco.drive@sdes.edu.in',
     batch: '2027 Passing Out Batch',
   },
   {
@@ -92,7 +92,7 @@ export const mockDrives = [
     selectedCount: null,
     venue: 'Main Auditorium (Hybrid)',
     coordinator: 'Prof. M. Ananya',
-    contact: 'zomato.coordinator@nite.edu.in',
+    contact: 'zomato.coordinator@sdes.edu.in',
     batch: '2027 Passing Out Batch',
   },
 ];

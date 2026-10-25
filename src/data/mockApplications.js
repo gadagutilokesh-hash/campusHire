@@ -79,7 +79,7 @@ export const mockApplications = [
         status: 'In Progress',
         date: '2026-10-25 07:00 PM (90 Mins)',
         venue: 'Campus Computer Center, Lab 3 & 4 (Proctored)',
-        testUrl: 'https://hackerrank.com/tests/gs-nite-campus-2026',
+        testUrl: 'https://hackerrank.com/tests/gs-sdes-campus-2026',
         note: 'Mandatory proctored test. College ID card is mandatory.',
       },
       {

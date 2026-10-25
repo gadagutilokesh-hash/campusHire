@@ -20,7 +20,7 @@ export const currentStudent = {
   resumeUrl: '/documents/Arjun_Sharma_Resume.pdf',
   resumeUpdated: '2026-10-15',
   githubUrl: 'https://github.com/arjunsharma-dev',
-  linkedinUrl: 'https://linkedin.com/in/arjun-sharma-nite',
+  linkedinUrl: 'https://linkedin.com/in/arjun-sharma-sdes',
   placementStatus: 'In Process', // 'Unplaced', 'In Process', 'Placed'
   offersCount: 0,
   profileCompletion: 85,

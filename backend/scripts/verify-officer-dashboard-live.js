@@ -1,6 +1,12 @@
 import '../src/loadEnv.js';
 
-const webApiKey = process.env.FIREBASE_API_KEY || 'AIzaSyAxgOj5l1NJWtyY7caAUf3sKRq6oaGFo5I';
+const webApiKey = process.env.FIREBASE_API_KEY;
+if (!webApiKey) {
+  console.error('[Security Error] FIREBASE_API_KEY environment variable is missing.');
+  console.error('Please configure FIREBASE_API_KEY in backend/.env before running this script.');
+  process.exit(1);
+}
+
 const BACKEND_URL = 'http://localhost:5000/api';
 
 async function getFirebaseIdToken(email, password) {

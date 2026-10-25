@@ -3,7 +3,13 @@ import assert from 'node:assert/strict';
 import { initFirebaseAdmin } from '../src/config/firebaseAdmin.js';
 import { getAuth } from 'firebase-admin/auth';
 
-const API_KEY = process.env.FIREBASE_API_KEY || "AIzaSyAxgOj5l1NJWtyY7caAUf3sKRq6oaGFo5I";
+const API_KEY = process.env.FIREBASE_API_KEY;
+if (!API_KEY) {
+  console.error('[Security Error] FIREBASE_API_KEY environment variable is missing.');
+  console.error('Please configure FIREBASE_API_KEY in backend/.env before running this script.');
+  process.exit(1);
+}
+
 const BACKEND_BASE = "http://localhost:5000/api";
 
 async function signInFirebase(email, password) {

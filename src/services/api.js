@@ -2,8 +2,30 @@
 // Bridges React frontend to Express.js REST API with Firebase Bearer token support,
 // and preserves a clean demonstration fallback mode when VITE_USE_MOCK_API is enabled.
 
-const IS_MOCK_MODE = import.meta.env.VITE_USE_MOCK_API === 'true';
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const IS_MOCK_MODE =
+  typeof import.meta !== 'undefined' && import.meta.env?.VITE_USE_MOCK_API === 'true';
+
+/**
+ * Normalizes API base URL:
+ * - Trims whitespace
+ * - Strips trailing slashes
+ * - Automatically ensures /api path segment is included, preventing duplicated or missing /api
+ */
+export const normalizeApiBaseUrl = (
+  rawUrl = (typeof import.meta !== 'undefined' ? import.meta.env?.VITE_API_BASE_URL : process.env?.VITE_API_BASE_URL)
+) => {
+  const url = rawUrl && rawUrl.trim() ? rawUrl.trim() : 'http://localhost:5000/api';
+  const clean = url.replace(/\/+$/, '');
+  return clean.endsWith('/api') ? clean : `${clean}/api`;
+};
+
+export const buildApiUrl = (endpoint = '') => {
+  if (!endpoint) return normalizeApiBaseUrl();
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  return `${normalizeApiBaseUrl()}${cleanEndpoint}`;
+};
+
+const BASE_URL = normalizeApiBaseUrl();
 
 /**
  * Simulates network latency for realistic feel in demonstration mode
@@ -46,7 +68,7 @@ export const apiClient = {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}${endpoint}`, {
+      const response = await fetch(buildApiUrl(endpoint), {
         headers: {
           'Content-Type': 'application/json',
           ...this.getAuthHeader(),
@@ -75,7 +97,7 @@ export const apiClient = {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}${endpoint}`, {
+      const response = await fetch(buildApiUrl(endpoint), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +128,7 @@ export const apiClient = {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}${endpoint}`, {
+      const response = await fetch(buildApiUrl(endpoint), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -137,7 +159,7 @@ export const apiClient = {
     }
 
     try {
-      const response = await fetch(`${BASE_URL}${endpoint}`, {
+      const response = await fetch(buildApiUrl(endpoint), {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

@@ -122,4 +122,66 @@ describe('CampusHire Backend Milestone 2 Tests', () => {
     assert.equal(res.status, 403);
     assert.ok(json.error.message.includes('Forbidden'));
   });
+
+  test('9. CORS Preflight (OPTIONS) Handling for Production Vercel Origin', async () => {
+    const res = await fetch(`${baseUrl}/api/auth/me`, {
+      method: 'OPTIONS',
+      headers: {
+        Origin: 'https://campus-hire-wine.vercel.app',
+        'Access-Control-Request-Method': 'GET',
+        'Access-Control-Request-Headers': 'authorization,content-type',
+      },
+    });
+
+    assert.equal(res.status, 204, 'Preflight request must return 204 No Content');
+    assert.equal(
+      res.headers.get('access-control-allow-origin'),
+      'https://campus-hire-wine.vercel.app',
+      'Vercel origin must receive matching Access-Control-Allow-Origin header'
+    );
+    assert.equal(
+      res.headers.get('access-control-allow-credentials'),
+      'true',
+      'Credentials must be allowed for cross-origin authentication'
+    );
+    const allowHeaders = res.headers.get('access-control-allow-headers') || '';
+    assert.ok(
+      allowHeaders.toLowerCase().includes('authorization'),
+      'Authorization header must be allowed in preflight'
+    );
+    assert.ok(
+      allowHeaders.toLowerCase().includes('content-type'),
+      'Content-Type header must be allowed in preflight'
+    );
+  });
+
+  test('10. Direct Health Endpoint (GET /health) Availability', async () => {
+    const res = await fetch(`${baseUrl}/health`);
+    assert.equal(res.status, 200, 'Direct /health endpoint must respond 200 OK');
+    const json = await res.json();
+    assert.equal(json.success, true);
+    assert.equal(json.data.status, 'healthy');
+  });
+
+  test('11. Authenticated User Profile Route Verification (GET /api/auth/me)', async () => {
+    // 1. Unauthenticated request must return 401
+    const unauthRes = await fetch(`${baseUrl}/api/auth/me`);
+    assert.equal(unauthRes.status, 401, 'Unauthenticated request to /api/auth/me must return 401');
+
+    // 2. Malformed token must return 401
+    const malformedRes = await fetch(`${baseUrl}/api/auth/me`, {
+      headers: { Authorization: 'Bearer malformed_token_123' },
+    });
+    assert.equal(malformedRes.status, 401, 'Malformed token must return 401');
+
+    // 3. Valid authenticated request returns profile
+    const authRes = await fetch(`${baseUrl}/api/auth/me`, {
+      headers: { Authorization: 'Bearer mock_jwt_token_student_123' },
+    });
+    assert.equal(authRes.status, 200, 'Authenticated request to /api/auth/me must return 200');
+    const authJson = await authRes.json();
+    assert.equal(authJson.success, true);
+    assert.ok(authJson.data.email);
+    assert.equal(authJson.data.role, 'student');
+  });
 });

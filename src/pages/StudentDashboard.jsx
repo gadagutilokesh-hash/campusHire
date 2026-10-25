@@ -130,8 +130,8 @@ export const StudentDashboard = () => {
         </div>
         <h2 className="text-lg font-bold text-[#0A0A0A]">Sign In to Your Student Dashboard</h2>
         <p className="text-xs text-[#667085] leading-relaxed">
-          Authenticate with your institutional credentials to view verified placement drives, track
-          your job applications, and monitor academic profile screening.
+          Authenticate with your institutional credentials to view verified placement drives for Sree
+          Dattha Institute of Engineering and Science (SDES), track your job applications, and monitor academic profile screening.
         </p>
         <div className="pt-2">
           <Link
@@ -154,7 +154,7 @@ export const StudentDashboard = () => {
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-[11px] font-semibold text-slate-300">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF2E88]" />
-              <span>Campus Placement Season 2026-27</span>
+              <span>Sree Dattha Institute of Engineering and Science (SDES) • Season 2026-27</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
               Your placement activity

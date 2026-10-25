@@ -70,9 +70,14 @@ export const Sidebar = ({ isOpen, onClose }) => {
                 <GraduationCap className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-lg font-extrabold text-[#0A0A0A]">
-                  Campus<span className="text-[#007BA7]">Hire</span>
-                </span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-lg font-extrabold text-[#0A0A0A]">
+                    Campus<span className="text-[#007BA7]">Hire</span>
+                  </span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F3F5F7] text-[#007BA7] px-1.5 py-0.5 rounded border border-slate-200">
+                    SDES
+                  </span>
+                </div>
                 <p className="text-[10px] text-[#667085] font-medium">Placement Portal</p>
               </div>
             </NavLink>
@@ -91,7 +96,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
                 </p>
                 <div className="mt-1 flex items-center gap-1">
                   <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-white text-slate-800 border border-slate-200">
-                    {isOfficer ? 'Placement Cell' : 'Student Account'}
+                    {isOfficer ? 'SDES Placement Cell' : 'SDES Student Account'}
                   </span>
                 </div>
               </div>

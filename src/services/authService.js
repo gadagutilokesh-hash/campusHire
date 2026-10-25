@@ -10,12 +10,13 @@ import {
 } from '../config/firebase';
 import { currentStudent, currentOfficer } from '../data/mockStudents';
 import { USER_ROLES } from '../utils/constants';
-import { apiResponse, delay } from './api';
+import { apiResponse, delay, normalizeApiBaseUrl } from './api';
 
 const AUTH_STORAGE_KEY = 'campushire_auth_user';
 const TOKEN_STORAGE_KEY = 'campushire_auth_token';
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
-const IS_MOCK_MODE = import.meta.env.VITE_USE_MOCK_API === 'true';
+const API_BASE = normalizeApiBaseUrl();
+const IS_MOCK_MODE =
+  typeof import.meta !== 'undefined' && import.meta.env?.VITE_USE_MOCK_API === 'true';
 
 /**
  * Normalizes user profile data across backend MongoDB schema and frontend component requirements.

@@ -96,9 +96,14 @@ export const LoginPage = () => {
             <GraduationCap className="w-5 h-5" />
           </div>
           <div className="text-left">
-            <span className="text-xl font-black text-[#0A0A0A]">
-              Campus<span className="text-[#007BA7]">Hire</span>
-            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-xl font-black text-[#0A0A0A]">
+                Campus<span className="text-[#007BA7]">Hire</span>
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-[#F3F5F7] text-[#007BA7] px-1.5 py-0.5 rounded border border-slate-200">
+                SDES
+              </span>
+            </div>
             <p className="text-[11px] text-[#667085] font-medium">Placement Management Portal</p>
           </div>
         </Link>
@@ -107,7 +112,7 @@ export const LoginPage = () => {
           Sign In to Your Account
         </h2>
         <p className="mt-1 text-xs text-[#667085]">
-          Official access portal for {APP_CONFIG.COLLEGE_NAME}
+          Official access portal for {APP_CONFIG.COLLEGE_NAME} (SDES)
         </p>
       </div>
 
@@ -194,7 +199,7 @@ export const LoginPage = () => {
                     setEmail(e.target.value);
                     if (errors.email) setErrors((prev) => ({ ...prev, email: null }));
                   }}
-                  placeholder="name@nite.edu.in"
+                  placeholder="student@sdes.edu.in"
                   className={`w-full pl-9 pr-3 py-2 bg-[#F3F5F7] border rounded-md font-medium text-slate-800 focus:bg-white focus:outline-none ${
                     errors.email ? 'border-rose-400 ring-1 ring-rose-300' : 'border-slate-300'
                   }`}

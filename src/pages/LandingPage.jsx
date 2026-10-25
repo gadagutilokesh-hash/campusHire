@@ -129,7 +129,7 @@ export const LandingPage = () => {
             {/* Status Indicator */}
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#F3F5F7] border border-slate-300 text-slate-800 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-[#FF2E88]" />
-              <span>Campus Recruitment Season {APP_CONFIG.PLACEMENT_SESSION}</span>
+              <span>SDES Campus Recruitment Season {APP_CONFIG.PLACEMENT_SESSION}</span>
             </div>
 
             {/* Direct Heading */}

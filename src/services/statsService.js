@@ -34,7 +34,7 @@ export const normalizeDrive = (drive) => {
     registeredStudents: drive.registeredStudents || 0,
     coordinator: drive.coordinator || {
       name: 'Training & Placement Office',
-      email: 'placements@nite.edu.in',
+      email: 'placements@sdes.edu.in',
     },
   };
 };

@@ -300,7 +300,7 @@ export const OfficerDashboard = () => {
         <div>
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-bold text-[#007BA7] uppercase tracking-wider bg-[#007BA7]/10 px-2 py-0.5 rounded border border-[#007BA7]/20">
-              Office of Training & Placements (TPO)
+              Office of Training & Placements (TPO) • SDES
             </span>
             <span className="text-xs text-[#667085]">• Session 2026-2027</span>
           </div>
@@ -308,7 +308,8 @@ export const OfficerDashboard = () => {
             Placement Cell Executive Dashboard
           </h2>
           <p className="text-xs text-[#667085] mt-0.5">
-            Officer: <strong className="text-slate-800 font-semibold">{user?.name || 'Dr. Radhika Menon'}</strong> • {user?.email || 'tpo@nite.edu.in'}
+            Sree Dattha Institute of Engineering and Science (SDES) • Officer:{' '}
+            <strong className="text-slate-800 font-semibold">{user?.name || 'Dr. Radhika Menon'}</strong> • {user?.email || 'tpo@sdes.edu.in'}
           </p>
         </div>
 

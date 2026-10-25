@@ -29,7 +29,7 @@ export const Footer = () => {
             </Link>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               The official centralized campus placement management system for{' '}
-              <span className="text-slate-200 font-medium">{APP_CONFIG.COLLEGE_NAME}</span>.
+              <span className="text-slate-200 font-medium">{APP_CONFIG.COLLEGE_NAME} ({APP_CONFIG.COLLEGE_SHORT})</span>.
               Connecting students with corporate opportunities through verified academic eligibility,
               real-time recruitment drive coordination, and secure application tracking.
             </p>
@@ -129,7 +129,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#667085]">
-          <p>© {currentYear} CampusHire • {APP_CONFIG.COLLEGE_NAME}. All rights reserved.</p>
+          <p>© {currentYear} CampusHire • {APP_CONFIG.COLLEGE_NAME} ({APP_CONFIG.COLLEGE_SHORT}). All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="hover:text-slate-300 transition-colors">
               Privacy Policy
